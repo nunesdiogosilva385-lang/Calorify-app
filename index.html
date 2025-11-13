@@ -2,53 +2,36 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calorify - Contador de Calorias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calorify</title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="estilos.css">
 
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/png" href="icone-192.png" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icone-192.png">
 </head>
 
 <body>
     <div class="app">
 
-        <h1 class="titulo">
-            <img src="logo.png" alt="logo" class="logo" /> Calorify
-        </h1>
+        <h1 class="titulo">🔥 Calorify</h1>
         <p class="sub">Calcule suas calorias rapidamente</p>
 
         <div class="cartao">
             <label for="alimento">Nome do alimento:</label>
-            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango..." />
+            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango...">
 
             <label for="quantidade">Quantidade em gramas:</label>
-            <input type="number" id="quantidade" placeholder="Ex: 100" />
+            <input type="number" id="quantidade" placeholder="Ex: 100">
 
             <button id="calcular" class="btn">Calcular 🔍</button>
         </div>
 
+        <h2 class="titulo-lista">🍏 Alimentos recomendados</h2>
+        <div id="lista" class="lista"></div>
+
         <div id="resultado" class="resultado"></div>
-
-        <!-- Lista de alimentos recomendados -->
-        <div class="lista-recomendada">
-            <h2>🍏 Alimentos recomendados</h2>
-
-            <div class="lista-itens">
-                <button class="item" data-alimento="arroz">Arroz 🍚</button>
-                <button class="item" data-alimento="frango">Frango 🍗</button>
-                <button class="item" data-alimento="banana">Banana 🍌</button>
-                <button class="item" data-alimento="maçã">Maçã 🍎</button>
-                <button class="item" data-alimento="ovo">Ovo 🥚</button>
-                <button class="item" data-alimento="batata">Batata 🥔</button>
-                <button class="item" data-alimento="feijão">Feijão 🫘</button>
-                <button class="item" data-alimento="carne">Carne 🥩</button>
-            </div>
-        </div>
-
     </div>
 
     <script src="script.js"></script>
