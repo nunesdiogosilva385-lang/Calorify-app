@@ -1,54 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Calorify - Contador de Calorias</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorify - Contador de Calorias</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="estilos.css" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos.css" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="icone-192.png" sizes="192x192" />
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="icone-192.png" />
 </head>
+
 <body>
-  <div class="container">
-    <header class="topo">
-      <!-- logo SVG inline -->
-      <img src="logo.svg" alt="Calorify Logo" class="logo" />
-      <h1>Calorify</h1>
-      <p class="sub">Calcule suas calorias rapidamente</p>
-    </header>
+    <div class="app">
 
-    <main class="card">
-      <label for="alimento">Nome do alimento:</label>
-      <input id="alimento" list="sugestoes" placeholder="Ex: Arroz, Frango..." autocomplete="off" />
-
-      <datalist id="sugestoes"></datalist>
-
-      <label for="quantidade">Quantidade em gramas:</label>
-      <input id="quantidade" type="number" placeholder="Ex: 100" />
-
-      <button id="calcular" class="btn">Calcular 🔍</button>
-
-      <div id="resultado" class="resultado" aria-live="polite"></div>
-
-      <section class="historico">
-        <h2>Histórico</h2>
-        <ul id="listaHistorico"></ul>
-        <div class="hist-actions">
-          <button id="limparHistorico" class="link">Limpar histórico</button>
+        <!-- 🟢 Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Calorify" class="logo">
         </div>
-      </section>
 
-      <section class="recomendados">
-        <h2>Recomendados</h2>
-        <div class="chips" id="chips"></div>
-      </section>
-    </main>
-  </div>
+        <h1 class="titulo">🔥 Calorify</h1>
+        <p class="sub">Calcule suas calorias rapidamente</p>
 
-  <script src="script.js"></script>
+        <div class="cartao">
+            <label for="alimento">Nome do alimento:</label>
+            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango..." />
+
+            <label for="quantidade">Quantidade em gramas:</label>
+            <input type="number" id="quantidade" placeholder="Ex: 100" />
+
+            <button id="calcular" class="btn">Calcular 🔍</button>
+        </div>
+
+        <div id="resultado" class="resultado"></div>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
