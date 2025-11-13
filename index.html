@@ -6,30 +6,31 @@
     <title>Calorify - Contador de Calorias</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="estilos.css">
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/png" href="icone-192.png" />
+    <!-- Logo e PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 
 <body>
     <div class="app">
 
-        <!-- 🟢 Logo -->
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo Calorify" class="logo">
-        </div>
+        <!-- LOGO PREMIUM -->
+        <h1 class="titulo">
+            <img src="logo.png" class="logo-app" alt="logo">
+            Calorify
+        </h1>
 
-        <h1 class="titulo">🔥 Calorify</h1>
         <p class="sub">Calcule suas calorias rapidamente</p>
 
         <div class="cartao">
+
             <label for="alimento">Nome do alimento:</label>
-            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango..." />
+            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango...">
 
             <label for="quantidade">Quantidade em gramas:</label>
-            <input type="number" id="quantidade" placeholder="Ex: 100" />
+            <input type="number" id="quantidade" placeholder="Ex: 100">
 
             <button id="calcular" class="btn">Calcular 🔍</button>
         </div>
