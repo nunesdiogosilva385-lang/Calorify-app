@@ -1,53 +1,127 @@
-:root{
-  --bg:#000;
-  --card:#070707;
-  --green:#00f07a;
-  --muted:#9beacb;
-  --accent: linear-gradient(90deg,#00f07a,#00d88f);
-  --radius:14px;
-  --glass: rgba(255,255,255,0.03);
+/* ================================
+   CALORIFY – Estilo Preto + Verde Neon
+   ================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: #00ff88;
+    text-align: center;
 }
 
-*{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
-
-html,body{height:100%;margin:0;background:var(--bg);color:var(--muted)}
-.container{max-width:720px;margin:32px auto;padding:16px}
-
-.topo{text-align:center;margin-bottom:18px}
-.logo{width:72px;height:72px;display:block;margin:0 auto 6px}
-.topo h1{color:var(--green);font-size:48px;margin:0;font-weight:800;text-shadow:0 6px 18px rgba(0,240,122,0.08)}
-.sub{color:var(--muted);margin-top:6px;font-size:16px}
-
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-label{display:block;color:var(--green);margin:14px 0 6px;font-weight:600}
-input[type="text"], input[type="number"]{
-  width:100%;padding:14px 16px;border-radius:12px;background:transparent;border:1px solid rgba(0,240,122,0.18);
-  color:var(--muted);outline:none;font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)
-}
-input::placeholder{color: rgba(155,234,203,0.45)}
-
-.btn{
-  margin-top:16px;width:100%;padding:18px;border-radius:12px;border:none;background:var(--green);
-  color:#001; font-weight:800;font-size:20px;cursor:pointer; box-shadow:0 8px 24px rgba(0,240,122,0.12)
+/* Container principal */
+.app {
+    padding: 20px;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
-.resultado{margin-top:18px;padding:12px;border-radius:10px;background:rgba(0,0,0,0.2);color:var(--muted);font-weight:700}
-
-.historico{margin-top:22px;color:var(--muted)}
-.historico h2{color:var(--green);margin-bottom:8px}
-#listaHistorico{list-style:none;padding:0;margin:0}
-#listaHistorico li{padding:8px 10px;border-radius:8px;background:rgba(0,240,122,0.03);margin-bottom:8px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-.link{background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;padding:8px}
-
-.recomendados{margin-top:18px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{
-  padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(0,240,122,0.14);color:var(--muted);cursor:pointer;
+/* Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
-.chip:hover{background:rgba(0,240,122,0.04)}
 
-/* Responsivo */
-@media(min-width:800px){
-  .container{max-width:900px}
-  .topo h1{font-size:60px}
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Título */
+.titulo {
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 0 0 15px #00ff88;
+}
+
+/* Subtítulo */
+.sub {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #b6ffd6;
+}
+
+/* Cartão */
+.cartao {
+    background-color: #0a0a0a;
+    border: 1px solid #00ff88;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px #00ff88;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #50ffb7;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #000;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #00ff88;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    box-shadow: 0 0 12px #00ff88;
+}
+
+/* Botão */
+.btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #00ff88;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00ff88;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #00cc6b;
+    box-shadow: 0 0 25px #00ff88;
+}
+
+/* Resultado */
+.resultado {
+    font-size: 26px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #0f0f0f;
+    border: 1px solid #00ff88;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #00ff88;
+    min-height: 40px;
+}
+
+/* Animação no resultado */
+@keyframes brilho {
+    0% { text-shadow: 0 0 5px #00ff88; }
+    50% { text-shadow: 0 0 20px #00ff88; }
+    100% { text-shadow: 0 0 5px #00ff88; }
+}
+
+.resultado.ativo {
+    animation: brilho 1s infinite;
 }
