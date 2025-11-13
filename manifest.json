@@ -1,0 +1,9 @@
+{
+  "name": "Calorify",
+  "short_name": "Calorify",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#00FF9D",
+  "icons": []
+}
