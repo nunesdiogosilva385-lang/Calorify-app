@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calorify - Contador de Calorias</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calorify - Contador de Calorias</title>
 
-    <!-- ESTILO -->
-    <link rel="stylesheet" href="estilos.css">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="estilos.css" />
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/png" href="icone-192.png" />
-
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icone-192.png" />
 </head>
+
 <body>
+  <div class="app">
 
-    <div class="app">
+    <h1 class="titulo">🔥 Calorify</h1>
+    <p class="sub">Calcule suas calorias rapidamente</p>
 
-        <h1 class="titulo">🔥 Calorify</h1>
-        <p class="sub">Calcule suas calorias rapidamente</p>
+    <div class="cartao">
+      <label for="alimento">Nome do alimento:</label>
+      <input type="text" id="alimento" placeholder="Ex: Arroz, Frango..." />
 
-        <div class="card">
-            <label>Nome do alimento:</label>
-            <input type="text" id="alimento" placeholder="Ex: Arroz, Frango..." />
+      <label for="quantidade">Quantidade em gramas:</label>
+      <input type="number" id="quantidade" placeholder="Ex: 100" />
 
-            <label>Quantidade em gramas:</label>
-            <input type="number" id="gramas" placeholder="Ex: 100" />
-
-            <button id="calcular">Calcular 🔍</button>
-        </div>
-
-        <div id="resultado" class="resultado"></div>
-
+      <button id="calcular" class="btn">Calcular 🔍</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="resultado" class="resultado"></div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
