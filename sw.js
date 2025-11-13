@@ -1,45 +1,38 @@
-const CACHE_NAME = "calorify-cache-v1";
+const CACHE_NAME = "calorify-cache-v3"; // <-- troquei para v3 pra forçar atualização
 
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
   "/estilos.css",
   "/script.js",
-  "/manifest.json",
   "/icone-192.png",
-  "/icone-512.png"
+  "/icone-512.png",
+  "/manifest.json"
 ];
 
-// Instala o service worker e adiciona arquivos ao cache
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
+  self.skipWaiting(); // força instalar mesmo se existir outro ativo
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
   );
-  self.skipWaiting();
 });
 
-// Ativa e limpa caches antigos
-self.addEventListener("activate", event => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    })
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys
+          .filter((key) => key !== CACHE_NAME)
+          .map((key) => caches.delete(key))
+      )
+    )
   );
-  self.clients.claim();
+  self.clients.claim(); // ativa imediatamente para todos
 });
 
-// Responde com cache primeiro
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request).then((response) => {
       return (
         response ||
         fetch(event.request).catch(() =>
