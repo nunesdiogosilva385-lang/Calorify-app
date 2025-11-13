@@ -1,8 +1,4 @@
-// ===============================
-// CALORIFY – Lógica Premium
-// ===============================
-
-// Banco básico de calorias (pode expandir depois)
+// ==== Tabela de calorias por 100g ====
 const tabelaCalorias = {
     "arroz": 130,
     "frango": 165,
@@ -18,48 +14,36 @@ const tabelaCalorias = {
     "tomate": 18
 };
 
-// Função principal
+// ==== Função principal ====
 function calcularCalorias() {
     const alimento = document.getElementById("alimento").value.trim().toLowerCase();
     const quantidade = parseFloat(document.getElementById("quantidade").value);
+    const resultadoDiv = document.getElementById("resultado");
 
-    // Verificação de preenchimento
     if (!alimento || isNaN(quantidade) || quantidade <= 0) {
-        mostrarResultado("⚠️ Preencha os dados corretamente!");
+        resultadoDiv.innerHTML = "⚠️ Preencha os dados corretamente!";
         return;
     }
 
-    // Verificação se o alimento existe
     if (!(alimento in tabelaCalorias)) {
-        mostrarResultado("❌ Alimento não encontrado!");
+        resultadoDiv.innerHTML = "❌ Alimento não encontrado na tabela.";
         return;
     }
 
-    // Cálculo
     const caloriasPor100g = tabelaCalorias[alimento];
     const resultado = (caloriasPor100g * quantidade) / 100;
 
-    mostrarResultado(`🔥 ${resultado.toFixed(1)} calorias`);
+    resultadoDiv.innerHTML = `🔥 ${resultado.toFixed(1)} calorias`;
+    resultadoDiv.style.animation = "brilho 1s ease";
 }
 
-// Exibir resultado com animação
-function mostrarResultado(texto) {
-    const divResultado = document.getElementById("resultado");
-    divResultado.innerHTML = texto;
-    divResultado.classList.add("ativo");
-
-    // Remove animação depois de 1 segundo
-    setTimeout(() => {
-        divResultado.classList.remove("ativo");
-    }, 1200);
-}
-
-// Listener do botão
+// ==== Botão principal ====
 document.getElementById("calcular").addEventListener("click", calcularCalorias);
-// Clique para preencher automaticamente o alimento
-document.querySelectorAll(".item").forEach(botao => {
-    botao.addEventListener("click", () => {
-        const nome = botao.getAttribute("data-alimento");
-        document.getElementById("alimento").value = nome;
+
+// ==== Clique nos botões da lista recomendada ====
+document.querySelectorAll(".item").forEach(button => {
+    button.addEventListener("click", () => {
+        const alimento = button.getAttribute("data-alimento");
+        document.getElementById("alimento").value = alimento;
     });
 });
