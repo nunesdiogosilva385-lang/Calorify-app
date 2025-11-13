@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calorify - Contador de Calorias</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calorify - Contador de Calorias</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="estilos.css" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos.css" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="icone-192.png" />
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icone-192.png">
 </head>
 
 <body>
-  <main class="page">
+<main class="page">
 
-    <!-- LOGO CERTA (apenas esta) -->
+    <!-- LOGO -->
     <header class="top">
-      <img src="logo.png" alt="Calorify Logo" class="logo" />
-      <h1 class="app-title">Calorify</h1>
-      <p class="subtitle">Calcule suas calorias rapidamente</p>
+        <img src="logo.png" alt="Calorify Logo" class="logo" />
+        <h1 class="app-title">Calorify</h1>
+        <p class="subtitle">Calcule suas calorias rapidamente</p>
     </header>
 
     <!-- FORMULÁRIO -->
     <section class="card">
-      <label for="alimento">Nome do alimento:</label>
-      <select id="alimento" class="input">
-        <option value="" disabled selected>Ex: Arroz, Frango...</option>
-      </select>
+        <label for="alimento">Nome do alimento:</label>
+        <select id="alimento" class="input">
+            <option value="" disabled selected>Ex: Arroz, Frango...</option>
+        </select>
 
-      <label for="quantidade">Quantidade em gramas:</label>
-      <input id="quantidade" type="number" class="input" placeholder="Ex: 100" />
+        <label for="quantidade">Quantidade em gramas:</label>
+        <input id="quantidade" type="number" class="input" placeholder="Ex: 100" />
 
-      <button id="calcular" class="btn">Calcular 🔍</button>
+        <button id="calcular" class="btn">Calcular 🔍</button>
     </section>
 
     <!-- RECOMENDADOS -->
@@ -44,8 +44,10 @@
     <h2 class="section-title">⏱️ Histórico de cálculos</h2>
     <section id="historico" class="historico"></section>
 
-  </main>
+</main>
 
-  <script src="script.js"></script>
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
 </body>
 </html>
