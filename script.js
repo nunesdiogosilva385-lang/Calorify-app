@@ -1,4 +1,4 @@
-// Banco de dados básico de calorias por 100g
+// Banco de calorias por alimento (por 100g)
 const tabelaCalorias = {
     "arroz": 130,
     "frango": 165,
@@ -16,7 +16,7 @@ const tabelaCalorias = {
 
 // Função principal
 function calcularCalorias() {
-    const alimento = document.getElementById("alimento").value.toLowerCase().trim();
+    const alimento = document.getElementById("alimento").value.toLowerCase();
     const quantidade = parseFloat(document.getElementById("quantidade").value);
 
     if (!alimento || isNaN(quantidade) || quantidade <= 0) {
