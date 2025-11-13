@@ -1,13 +1,11 @@
 {
-  "name": "Aplicativo Calorify",
+  "name": "Calorify",
   "short_name": "Calorify",
-  "description": "Aplicativo simples e prático para calcular calorias de alimentos.",
+  "description": "Calcule calorias rapidamente de forma prática e intuitiva.",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#4caf50",
+  "background_color": "#000000",
+  "theme_color": "#00FF85",
   "icons": [
     {
       "src": "icone-192.png",
