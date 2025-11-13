@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calorify - Contador de Calorias</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calorify - Contador de Calorias</title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="estilos.css" />
+  <!-- link para seu CSS existente -->
+  <link rel="stylesheet" href="estilos.css" />
 
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/png" href="icone-192.png" />
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icone-192.png" />
 </head>
 
 <body>
-    <div class="app">
+  <main class="page">
+    <!-- TOP: logo e título -->
+    <header class="top">
+      <img src="logo.png" alt="Calorify logo" class="logo" />
+      <h1 class="app-title">Calorify</h1>
+      <p class="subtitle">Calcule suas calorias rapidamente</p>
+    </header>
 
-        <!-- LOGO -->
-        <img src="logo.png" alt="Calorify" class="logo-app" />
+    <!-- FORM / CARTÃO -->
+    <section class="card">
+      <label for="alimento" class="label">Nome do alimento:</label>
+      <select id="alimento" class="input select">
+        <option value="" selected disabled>Ex: Arroz, Frango...</option>
+        <!-- o script.js pode preencher opções dinamicamente também -->
+      </select>
 
-        <h1 class="titulo">🔥 Calorify</h1>
-        <p class="sub">Calcule suas calorias rapidamente</p>
+      <label for="quantidade" class="label">Quantidade em gramas:</label>
+      <input id="quantidade" class="input" type="number" placeholder="Ex: 100" />
 
-        <div class="cartao">
+      <button id="calcular" class="btn">Calcular 🔍</button>
+    </section>
 
-            <label for="alimento">Nome do alimento:</label>
-            <select id="alimento">
-                <option disabled selected>Ex: Arroz, Frango...</option>
-            </select>
+    <!-- Resultado (preenchido pelo script) -->
+    <section id="resultado" class="resultado" aria-live="polite"></section>
 
-            <label for="quantidade">Quantidade em gramas:</label>
-            <input type="number" id="quantidade" placeholder="Ex: 100" />
+    <!-- Alimentos recomendados (renderizado pelo script) -->
+    <section id="recomendados" class="recomendados" aria-label="Alimentos recomendados"></section>
 
-            <button id="calcular" class="btn">
-                Calcular 🔍
-            </button>
-        </div>
+    <!-- Histórico (renderizado pelo script) -->
+    <section id="historico" class="historico" aria-label="Histórico de cálculos"></section>
+  </main>
 
-        <!-- Resultado -->
-        <div id="resultado" class="resultado"></div>
-
-        <!-- Alimentos recomendados (gerado pelo script) -->
-        <div id="recomendados"></div>
-
-        <!-- Histórico de cálculos (gerado pelo script) -->
-        <div id="historico"></div>
-
-    </div>
-
-    <script src="script.js"></script>
+  <!-- seu script -->
+  <script src="script.js"></script>
 </body>
 </html>
