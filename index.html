@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calorify - Contador de Calorias</title>
 
-  <!-- link para seu CSS existente -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="estilos.css" />
 
   <!-- PWA -->
@@ -15,38 +15,37 @@
 
 <body>
   <main class="page">
-    <!-- TOP: logo e título -->
+
+    <!-- LOGO CERTA (apenas esta) -->
     <header class="top">
-      <img src="logo.png" alt="Calorify logo" class="logo" />
+      <img src="logo.png" alt="Calorify Logo" class="logo" />
       <h1 class="app-title">Calorify</h1>
       <p class="subtitle">Calcule suas calorias rapidamente</p>
     </header>
 
-    <!-- FORM / CARTÃO -->
+    <!-- FORMULÁRIO -->
     <section class="card">
-      <label for="alimento" class="label">Nome do alimento:</label>
-      <select id="alimento" class="input select">
-        <option value="" selected disabled>Ex: Arroz, Frango...</option>
-        <!-- o script.js pode preencher opções dinamicamente também -->
+      <label for="alimento">Nome do alimento:</label>
+      <select id="alimento" class="input">
+        <option value="" disabled selected>Ex: Arroz, Frango...</option>
       </select>
 
-      <label for="quantidade" class="label">Quantidade em gramas:</label>
-      <input id="quantidade" class="input" type="number" placeholder="Ex: 100" />
+      <label for="quantidade">Quantidade em gramas:</label>
+      <input id="quantidade" type="number" class="input" placeholder="Ex: 100" />
 
       <button id="calcular" class="btn">Calcular 🔍</button>
     </section>
 
-    <!-- Resultado (preenchido pelo script) -->
-    <section id="resultado" class="resultado" aria-live="polite"></section>
+    <!-- RECOMENDADOS -->
+    <h2 class="section-title">🍏 Alimentos recomendados</h2>
+    <section id="recomendados" class="recomendados"></section>
 
-    <!-- Alimentos recomendados (renderizado pelo script) -->
-    <section id="recomendados" class="recomendados" aria-label="Alimentos recomendados"></section>
+    <!-- HISTÓRICO -->
+    <h2 class="section-title">⏱️ Histórico de cálculos</h2>
+    <section id="historico" class="historico"></section>
 
-    <!-- Histórico (renderizado pelo script) -->
-    <section id="historico" class="historico" aria-label="Histórico de cálculos"></section>
   </main>
 
-  <!-- seu script -->
   <script src="script.js"></script>
 </body>
 </html>
