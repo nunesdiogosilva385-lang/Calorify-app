@@ -56,3 +56,10 @@ function mostrarResultado(texto) {
 
 // Listener do botão
 document.getElementById("calcular").addEventListener("click", calcularCalorias);
+// Clique para preencher automaticamente o alimento
+document.querySelectorAll(".item").forEach(botao => {
+    botao.addEventListener("click", () => {
+        const nome = botao.getAttribute("data-alimento");
+        document.getElementById("alimento").value = nome;
+    });
+});
