@@ -1,76 +1,78 @@
 /* ===== ESTILO GERAL ===== */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e1e1e, #3e3e3e);
     margin: 0;
     padding: 0;
+    background: #0A0A0A;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
-.container {
-    background: #222;
-    width: 90%;
-    max-width: 380px;
+.app {
+    max-width: 420px;
+    margin: auto;
     padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-/* ===== TÍTULO ===== */
 h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #00e8a4;
+    font-size: 36px;
     font-weight: bold;
+    color: #00FF9D;
+    margin-bottom: 5px;
 }
 
-/* ===== INPUTS ===== */
-input {
+.sub {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px #00FF9D;
+    text-align: left;
+}
+
+.card label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
-    border: none;
+    margin-bottom: 15px;
     border-radius: 10px;
+    border: none;
     outline: none;
-    background: #333;
-    color: white;
     font-size: 16px;
 }
 
-input:focus {
-    border: 2px solid #00e8a4;
-}
-
-/* ===== BOTÃO PRINCIPAL ===== */
 button {
     width: 100%;
     padding: 14px;
-    margin-top: 15px;
+    background: #00FF9D;
     border: none;
-    border-radius: 10px;
-    background: #00e8a4;
-    color: #111;
+    color: #000;
     font-size: 18px;
     font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    background: #00c78c;
-    transform: scale(1.03);
+    background: #00d685;
 }
 
 /* ===== RESULTADO ===== */
-#resultado {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #00e8a4;
+.resultado {
+    margin-top: 25px;
+    padding: 18px;
+    background: #0f0f0f;
+    border-radius: 12px;
+    box-shadow: 0 0 5px #00FF9D;
+    font-size: 18px;
 }
