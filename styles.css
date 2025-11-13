@@ -1,78 +1,96 @@
-/* ===== ESTILO GERAL ===== */
 body {
     margin: 0;
     padding: 0;
-    background: #0A0A0A;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    background: #000000;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #00ff7f;
+    text-align: center;
 }
 
 .app {
     max-width: 420px;
-    margin: auto;
-    padding: 25px;
-    text-align: center;
+    margin: 0 auto;
+    padding: 30px 20px;
 }
 
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #00FF9D;
-    margin-bottom: 5px;
+.titulo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #00ff7f;
 }
 
 .sub {
-    color: #888;
+    font-size: 1.2rem;
     margin-bottom: 25px;
+    color: #b6ffd6;
 }
 
-/* ===== CARD ===== */
 .card {
-    background: #111;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 8px #00FF9D;
+    background: #0d0d0d;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 255, 127, 0.15);
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 255, 127, 0.2);
+}
+
+/* Rótulos */
+label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #9affc4;
     text-align: left;
 }
 
-.card label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.card input {
+/* Inputs */
+input {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #00ff7f;
+    background: #000000;
+    color: #00ff7f;
+    font-size: 1rem;
     outline: none;
-    font-size: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(0, 255, 127, 0.15);
 }
 
+input::placeholder {
+    color: #47ffa6;
+}
+
+/* Botão */
 button {
     width: 100%;
     padding: 14px;
-    background: #00FF9D;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: #00ff7f;
+    color: #000000;
     border: none;
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
 button:hover {
-    background: #00d685;
+    background: #0aff90;
+    box-shadow: 0 0 18px rgba(0, 255, 127, 0.6);
 }
 
-/* ===== RESULTADO ===== */
+/* Resultado */
 .resultado {
-    margin-top: 25px;
-    padding: 18px;
-    background: #0f0f0f;
-    border-radius: 12px;
-    box-shadow: 0 0 5px #00FF9D;
-    font-size: 18px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #00ff7f;
+}
+
+/* Animação */
+@keyframes brilho {
+    0% { box-shadow: 0 0 5px rgba(0,255,127,0.3); }
+    100% { box-shadow: 0 0 20px rgba(0,255,127,0.6); }
 }
