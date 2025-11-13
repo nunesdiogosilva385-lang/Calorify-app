@@ -1,9 +1,23 @@
 {
   "name": "Calorify",
   "short_name": "Calorify",
-  "display": "standalone",
+  "description": "Calcule calorias rapidamente — digite o alimento ou escolha sugestões, veja o gráfico semanal.",
   "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#00FF9D",
-  "icons": []
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
