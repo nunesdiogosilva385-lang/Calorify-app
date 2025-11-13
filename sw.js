@@ -1,19 +1,51 @@
-const CACHE_NAME = 'calorify-static-v1';
-const URLsToCache = ['/', '/index.html', '/estilos.css', '/script.js', '/manifest.json'];
+const CACHE_NAME = "calorify-cache-v1";
 
-self.addEventListener('install', (event) => {
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/estilos.css",
+  "/script.js",
+  "/manifest.json",
+  "/icone-192.png",
+  "/icone-512.png"
+];
+
+// Instala o service worker e adiciona arquivos ao cache
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(URLsToCache))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(FILES_TO_CACHE);
+    })
   );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+// Ativa e limpa caches antigos
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => {
+// Responde com cache primeiro
+self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(res => res || fetch(event.request))
+    caches.match(event.request).then(response => {
+      return (
+        response ||
+        fetch(event.request).catch(() =>
+          caches.match("/index.html")
+        )
+      );
+    })
   );
 });
