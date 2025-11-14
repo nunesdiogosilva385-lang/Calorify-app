@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="estilos.css" />
 
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/png" href="icone-192.png" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icone-192.png">
+    <meta name="theme-color" content="#000000">
 </head>
 
 <body>
@@ -37,17 +38,28 @@
         <div id="resultado"></div>
     </section>
 
-    <!-- AQUI O SCRIPT VAI CRIAR AUTOMATICAMENTE:
-         ✔ Título dos recomendados
-         ✔ Lista dos recomendados
-         ✔ Título do histórico
-         ✔ Lista do histórico
-    -->
+    <!-- Estes blocos vão ser criados automaticamente pelo script.js -->
+    <!-- Título dos recomendados -->
+    <!-- Lista dos recomendados -->
+    <!-- Título do histórico -->
+    <!-- Lista do histórico -->
 
 </main>
 
-<!-- SCRIPT -->
+<!-- SCRIPT PRINCIPAL -->
 <script src="script.js"></script>
+
+<!-- REGISTRO DO SERVICE WORKER (necessário para Play Store) -->
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("./sw.js")
+            .then(() => console.log("Service Worker registrado com sucesso!"))
+            .catch((err) => console.log("Erro ao registrar o SW:", err));
+    });
+}
+</script>
 
 </body>
 </html>
