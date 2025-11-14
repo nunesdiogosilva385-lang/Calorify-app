@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="estilos.css" />
 
     <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="icone-192.png">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="icone-192.png" />
 </head>
 
 <body>
-<main class="page">
+<main class="app">
 
     <!-- LOGO -->
     <header class="top">
@@ -23,25 +23,31 @@
         <p class="subtitle">Calcule suas calorias rapidamente</p>
     </header>
 
-    <!-- FORMULÁRIO -->
-    <section class="card">
+    <!-- CARTÃO DE CÁLCULO -->
+    <section class="cartao">
         <label for="alimento">Nome do alimento:</label>
-        <select id="alimento" class="input">
-            <option value="" disabled selected>Ex: Arroz, Frango...</option>
-        </select>
+        <input id="alimento" class="input" placeholder="Ex: Arroz, Frango..." />
 
         <label for="quantidade">Quantidade em gramas:</label>
         <input id="quantidade" type="number" class="input" placeholder="Ex: 100" />
 
         <button id="calcular" class="btn">Calcular 🔍</button>
+
+        <!-- resultado aparece aqui -->
+        <div id="resultado"></div>
     </section>
 
-    <!-- RECOMENDADOS -->
-    <h2 class="section-title">🍏 Alimentos recomendados</h2>
-    <section id="recomendados" class="recomendados"></section>
-
-    <!-- HISTÓRICO -->
-    <h2 class="section-title">⏱️ Histórico de cálculos</h2>
-    <section id="historico" class="historico"></section>
+    <!-- AQUI O SCRIPT VAI CRIAR AUTOMATICAMENTE:
+         ✔ Título dos recomendados
+         ✔ Lista dos recomendados
+         ✔ Título do histórico
+         ✔ Lista do histórico
+    -->
 
 </main>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
